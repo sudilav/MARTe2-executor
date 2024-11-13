@@ -1,0 +1,3 @@
+TARGET=cov
+
+include Makefile.inc

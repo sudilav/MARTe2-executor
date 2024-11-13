@@ -1,0 +1,13 @@
+diff --git a/Source/Core/Scheduler/L5GAMs/MemoryMapAsyncOutputBroker.cpp b/Source/Core/Scheduler/L5GAMs/MemoryMapAsyncOutputBroker.cpp
+index 41925c49..29d10cc8 100644
+--- a/Source/Core/Scheduler/L5GAMs/MemoryMapAsyncOutputBroker.cpp
++++ b/Source/Core/Scheduler/L5GAMs/MemoryMapAsyncOutputBroker.cpp
+@@ -96,7 +96,7 @@ void MemoryMapAsyncOutputBroker::UnlinkDataSource() {
+         }
+     }
+     if (service.GetStatus() != EmbeddedThreadI::OffState) {
+-        service.SetTimeout(1000);
++        service.SetTimeout(TTInfiniteWait);
+         if (service.Stop() != ErrorManagement::NoError) {
+             REPORT_ERROR(ErrorManagement::Warning, "Going to kill the EmbbeddedService");
+             if (service.Stop() != ErrorManagement::NoError) {
