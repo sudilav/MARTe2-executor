@@ -10,9 +10,9 @@ RUN mkdir /root/tests
 
 WORKDIR /root
 
-RUN git clone https://vcis-gitlab.f4e.europa.eu/aneto/MARTe2.git MARTe2
+RUN git clone https://vcis-gitlab.f4e.europa.eu/aneto/MARTe2.git MARTe2 -b v1.9.2
 
-RUN git clone https://vcis-gitlab.f4e.europa.eu/aneto/MARTe2-components.git
+RUN git clone https://vcis-gitlab.f4e.europa.eu/aneto/MARTe2-components.git -b v1.8.0
 
 # We implement this patch mainly for test purposes - it ensures that when we tear down the application, we let the filewriter
 # datasource flush and close the file properly by waiting for it infinitely. This allows us to test at max speeds without losing
